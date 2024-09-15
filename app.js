@@ -1,15 +1,15 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-
+const port = process.env.PORT || 3000
 const socketio = require('socket.io');
 const http = require('http');
 
 const server = http.createServer(app);
 const io = socketio(server);
 
-server.listen(3000, () => {
-    console.log("Server is runnning on port 3000");
+server.listen(port, () => {
+    console.log(`Server is runnning on port ${port}`);
 });
 
 app.set("view engine", "ejs");
